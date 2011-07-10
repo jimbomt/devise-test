@@ -1,11 +1,14 @@
 <h1>This is your Home Page</h1>
 
 <% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <p>Hello Admin!</p>
+  <% end %>
   <ul>
     <li><%= link_to "edit profile", edit_user_registration_path %>
     <li><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
     <li><%= link_to "change password", edit_user_password_path %></li>
-    <li><%= link_to "all users", all_users_path %>
+    <li><%= link_to "all users", all_users_path %></li>
   </ul>
 <% else %>
   <ul>

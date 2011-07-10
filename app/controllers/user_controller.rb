@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  before_filter :authenticate_user!
+  load_and_authorize_resource
   
   def index
     @users = User.find(:all, :conditions => ['id IS NOT (?)', current_user.id])
