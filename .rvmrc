@@ -1,0 +1,2 @@
+rvm ruby-1.9.2@devise-test
+rvm_trust_rvmrcs_flag=1

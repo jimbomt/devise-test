@@ -1,0 +1,5 @@
+<% for user in @users %>
+  <p>Email: <%= user.email %>, <%= link_to "Edit User", edit_user_path(user) %>, <%= link_to "Delete User", user_path(user), :confirm => "Are you sure?", :method => :delete %></p>
+<% end %>
+
+<p><%= link_to "Add User", new_user_path %></p>
