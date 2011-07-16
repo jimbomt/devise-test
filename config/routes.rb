@@ -8,6 +8,11 @@ DeviseTest::Application.routes.draw do
     match "/home" => :home
     match "/contact" => :contact
     match "/users" => :all_users, :as => 'all_users'
+    match "/profile" => :profile
+  end
+  
+  scope :controller => :appointments do
+    match "/schedule" => :list
   end
   
   resources :user, :controller => "user"

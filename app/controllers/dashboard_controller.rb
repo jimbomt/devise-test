@@ -10,5 +10,9 @@ class DashboardController < ApplicationController
     @users = User.find(:all, :conditions => ["id IS NOT (?)", current_user.id])
     # authorize! :manage, User
   end
+  
+  def profile
+    @user = current_user
+  end
 
 end

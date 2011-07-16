@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'jquery-rails'
 gem 'cancan'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'

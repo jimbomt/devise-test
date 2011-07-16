@@ -5,6 +5,10 @@ class UserController < ApplicationController
     @users = User.find(:all, :conditions => ['id IS NOT (?)', current_user.id])
   end
   
+  def show
+    @user = current_user
+  end
+  
   def new
     @user = User.new
   end
