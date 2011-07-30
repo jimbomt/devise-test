@@ -6,10 +6,11 @@ class Ability
     #guest user
     user ||= User.new
     
-    if user.admin?
+    if user.role? :super_admin
       can :manage, :all
-    elsif
-      cannot :access, :all_users
+    else
+      # restrict to specific actions in the contoller
+      can [:home, :contact, :profile], :dashboard
     end
   end
 end

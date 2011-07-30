@@ -1,4 +1,6 @@
 class DashboardController < ApplicationController
+  # activate access control with cancan at the controller level
+  authorize_resource :class => false
 
   def home
   end

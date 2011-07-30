@@ -1,9 +1,11 @@
 <h1>This is your Home Page</h1>
 
 <% if user_signed_in? %>
-  <% if current_user.admin? %>
-    <p>Hello Admin!</p>
+  
+  <% if current_user.role? :super_admin %>
+    <p>Hello Super-Admin - with great power comes great responsability!</p>
   <% end %>
+  <p>User roles: <%= current_user.all_roles %></p>
   <ul>
     <li><%= link_to "show profile", profile_path %>
     <li><%= link_to "edit profile", edit_user_registration_path %>

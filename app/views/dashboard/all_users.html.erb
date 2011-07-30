@@ -2,7 +2,8 @@
   <p>Email: <%= user.email %>, <%= image_tag user.photo.url %>
     <% if can? :manage, user %>
       <%= link_to "Edit User", edit_user_path(user) %>,
-      <%= link_to "Delete User", user_path(user), :confirm => "Are you sure?", :method => :delete %></p>
+      <%= link_to "Delete User", user_path(user), :confirm => "Are you sure?", :method => :delete %>
+  </p>
     <% end %>
 <% end %>
 
